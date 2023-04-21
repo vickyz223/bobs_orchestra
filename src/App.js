@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Homepage from './components/Homepage'
+
+const listings = [
+  {
+    Title: "Beethoven's Greatest Works",
+
+    Type: "Master’s Performance",
+
+    Dates: ["2023-06-23T23:00:00Z", "2023-07-23T23:00:00Z"],
+
+    Image: "*plugin any image url here*",
+
+    Description: "Come witness this amazing performance.",
+  },
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Homepage listings={listings} />
     </div>
   );
 }
