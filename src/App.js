@@ -1,23 +1,24 @@
 import Homepage from './components/Homepage'
+import listingService from './services/listings.js' 
+import { useState, useEffect } from 'react';
 
-const listings = [
-  {
-    Title: "Beethoven's Greatest Works",
-
-    Type: "Master’s Performance",
-
-    Dates: ["2023-06-23T23:00:00Z", "2023-07-23T23:00:00Z"],
-
-    Image: "*plugin any image url here*",
-
-    Description: "Come witness this amazing performance.",
-  },
-];
 
 function App() {
+  const [toggle, setToggle] = useState(false)
+  const [display, setDisplay] = useState([])
+
+  useEffect( () => {
+    if (toggle) {
+      setDisplay(listingService.getAllTest())
+    } else {
+      setDisplay(listingService.getAll())
+    }
+  }, [toggle])
+
   return (
     <div className="App">
-      <Homepage listings={listings} />
+      <button onClick={() => setToggle(!toggle)}>Toggle all</button>
+      <Homepage listings={display} />
     </div>
   );
 }

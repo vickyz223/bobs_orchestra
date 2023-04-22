@@ -6,7 +6,7 @@ const Listing = ({listing}) => {
         <p>{Type}</p>
         <h3>Dates</h3>
         {Dates.map(date => <p id={`${date}`} >{date}</p>)}
-        <image src={Image} />
+        <img src={Image} alt="picture of a concert" />
         <p>{Description}</p>
       </div>
     );
