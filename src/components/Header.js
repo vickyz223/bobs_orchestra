@@ -1,5 +1,5 @@
 const Header = ({ toggle, setToggle }) => (
-  <nav className="flex justify-between p-3 bg-[#F45050] fixed top-0 z-10 w-full">
+  <nav className="fixed top-0 z-10 flex w-full justify-between bg-[#F45050] p-3">
     <div className="flex gap-2">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -7,7 +7,7 @@ const Header = ({ toggle, setToggle }) => (
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-6 h-6"
+        className="h-6 w-6"
       >
         <path
           strokeLinecap="round"
@@ -15,19 +15,19 @@ const Header = ({ toggle, setToggle }) => (
           d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z"
         />
       </svg>
-      <p className="text-gray-900 font-bold text-xl">Bob's Orchestra Hall</p>
+      <p className="text-xl font-bold text-gray-900">Bob's Orchestra Hall</p>
     </div>
-    <div className="mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]  mt-[0.1rem]">
+    <div className="mb-[0.125rem] mt-[0.1rem] block flex min-h-[1.5rem] content-center justify-items-center  pl-[1.5rem]">
       <input
-        className="relative float-left -ml-[1.5rem] mr-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem] appearance-none rounded-[0.25rem] border-[0.125rem] border-solid border-neutral-300 outline-none before:pointer-events-none before:absolute before:h-[0.875rem] before:w-[0.875rem] before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] checked:border-primary checked:bg-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:-mt-px checked:after:ml-[0.25rem] checked:after:block checked:after:h-[0.8125rem] checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-l-0 checked:after:border-t-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rem] focus:after:w-[0.875rem] focus:after:rounded-[0.125rem] focus:after:content-[''] checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:-mt-px checked:focus:after:ml-[0.25rem] checked:focus:after:h-[0.8125rem] checked:focus:after:w-[0.375rem] checked:focus:after:rotate-45 checked:focus:after:rounded-none checked:focus:after:border-[0.125rem] checked:focus:after:border-l-0 checked:focus:after:border-t-0 checked:focus:after:border-solid checked:focus:after:border-white checked:focus:after:bg-transparent dark:border-neutral-600 dark:checked:border-primary dark:checked:bg-primary dark:focus:before:shadow-[0px_0px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca]"
+        className="h-[1.3rem] w-[1.3rem] mt-[0.2rem] accent-gray-900"
         type="checkbox"
         value=""
         id="checkboxDefault"
         onClick={() => setToggle(!toggle)}
       />
       <label
-        className="inline-block pl-[0.15rem] hover:cursor-pointer text-md"
-        for="checkboxDefault"
+        className="text-xl text-gray-900 inline-block pl-[0.5rem] hover:cursor-pointer"
+        htmlFor="checkboxDefault"
       >
         Extra
       </label>
@@ -35,4 +35,4 @@ const Header = ({ toggle, setToggle }) => (
   </nav>
 );
 
-export default Header
+export default Header;

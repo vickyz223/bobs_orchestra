@@ -1,28 +1,28 @@
-import listingService from '../services/listings'
+import listingService from "../services/listings";
 
-const Listing = ({listing}) => {
-    const {Title, Type, Date, Image, Description} = listing
-    return (
-      <div className="flex justify-center items-stretch ">
-        <div className="flex flex-col sm:flex-row bg-white rounded-lg shadow-xl h-auto min-w-2xl  max-h-auto border-[1px] border-gray-300">
-          <div className="flex-initial flex-1">
-            <img
-              src={Image}
-              alt="conductor leading a band in a concert hall"
-              className="w-[12rem] rounded-t-lg sm:object-cover sm:rounded-l-lg sm:rounded-r-none h-full min-w-[18rem] sm:max-w-[18rem]"
-            />
-          </div>
-          <div className="w-[15rem] gap-1 flex flex-col flex-auto gap-2 h-full sm:w-[20rem] m-5">
-            <h1 className="text-gray-900 font-bold text-2xl ">{Title}</h1>
-            <p className="text-md text-gray-600">{Type}</p>
-            <h3 className="text-md font-semibold text-gray-700">
-              {listingService.conversion(Date)}
-            </h3>
-            <p className="text-gray-700 text-base">{Description}</p>
-          </div>
+const Listing = ({ listing }) => {
+  const { Title, Type, Date, Image, Description } = listing;
+  return (
+    <div className="flex items-stretch justify-center ">
+      <div className="min-w-2xl max-h-auto flex h-auto flex-col rounded-lg border-[1px] border-gray-300  bg-white shadow-xl sm:flex-row">
+        <div className="flex-1 flex-initial">
+          <img
+            src={Image}
+            alt="conductor leading a band in a concert hall"
+            className="h-full w-[12rem] min-w-[18rem] rounded-t-lg sm:max-w-[18rem] sm:rounded-l-lg sm:rounded-r-none sm:object-cover"
+          />
+        </div>
+        <div className="m-5 flex h-full w-[15rem] flex-auto flex-col gap-1 gap-2 sm:w-[20rem]">
+          <h1 className="text-2xl font-bold text-gray-900 ">{Title}</h1>
+          <p className="text-md text-gray-600">{Type}</p>
+          <h3 className="text-md font-semibold text-gray-700">
+            {listingService.conversion(Date)}
+          </h3>
+          <p className="text-base text-gray-700">{Description}</p>
         </div>
       </div>
-    );
-}
+    </div>
+  );
+};
 
-export default Listing
+export default Listing;
