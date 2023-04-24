@@ -1,4 +1,6 @@
 import Homepage from './components/Homepage'
+import Header from './components/Header';
+import ToTop from './components/ToTop';
 import listingService from './services/listings.js' 
 import { useState, useEffect } from 'react';
 
@@ -8,17 +10,34 @@ function App() {
   const [display, setDisplay] = useState([])
 
   useEffect( () => {
+    let data
+    let events = []
     if (toggle) {
-      setDisplay(listingService.getAllTest())
+      data = listingService.getAllTest();
     } else {
-      setDisplay(listingService.getAll())
+      data = listingService.getAll()
     }
+    data.forEach((event) => {
+      event.Dates.forEach((date) => {
+        const dateEvent = {
+          Title: event.Title,
+          Type: event.Type,
+          Date: date,
+          Image: event.Image,
+          Description: event.Description,
+        };
+        events.push(dateEvent);
+      });
+    });
+    console.log("a", events)
+    setDisplay(events);
   }, [toggle])
 
   return (
-    <div className="App">
-      <button onClick={() => setToggle(!toggle)}>Toggle all</button>
+    <div className="App bg-[#F0F0F0] w-screen h-screen">
+      <Header toggle={toggle} setToggle={setToggle}/>
       <Homepage listings={display} />
+      <ToTop />
     </div>
   );
 }
