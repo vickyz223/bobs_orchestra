@@ -15,13 +15,13 @@ const ToTop = () => {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="#f0f9ff"
-          stroke-width="2.5"
+          strokeWidth="2.5"
           stroke="#f0f9ff"
           class="h-6 w-6"
         >
           <path
             fill-rule="evenodd"
-            stroke-linecap="round"
+            strokeLinecap="round"
             stroke-linejoin="round"
             d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75"
             clip-rule="evenodd"
