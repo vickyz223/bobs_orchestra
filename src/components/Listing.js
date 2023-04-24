@@ -8,7 +8,7 @@ const Listing = ({ listing }) => {
         <div className="flex-1 flex-initial">
           <img
             src={Image}
-            alt="conductor leading a band in a concert hall"
+            alt={`${Title} accompaniment`}
             className="h-full w-[12rem] min-w-[18rem] rounded-t-lg sm:max-w-[18rem] sm:rounded-l-lg sm:rounded-r-none sm:object-cover"
           />
         </div>
